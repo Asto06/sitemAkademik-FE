@@ -1,0 +1,14 @@
+.content-wrapper {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.table-range {
+  font-size: 18px;
+  color: white;
+}
+.table {
+  max-width: 100%;
+}
+.edit {
+  text-align: right;
+}

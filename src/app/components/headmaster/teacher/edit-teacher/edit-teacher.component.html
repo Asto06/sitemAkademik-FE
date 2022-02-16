@@ -1,0 +1,101 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="col-12 set">
+      <div class="data">
+        <h2>Update Data Teacher</h2>
+      </div>
+
+      <div class="container body-form">
+        <mat-spinner *ngIf="!spinner" class="spinner"></mat-spinner>
+        <form [formGroup]="editTeacherForm" *ngIf="spinner">
+          <div class="mb-3 row">
+            <label for="fullname" class="col-sm-2 col-form-label"
+              >Fullname</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="fullname"
+                formControlName="fullName"
+              />
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input
+                type="email"
+                class="form-control"
+                readonly
+                formControlName="email"
+                id="email"
+              />
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="birthday" class="col-sm-2 col-form-label"
+              >Birthday</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="birthday"
+                formControlName="birthDate"
+              />
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="course" class="col-sm-2 col-form-label"
+              >Select Course :</label
+            >
+            <div class="col-sm-5">
+              <select class="form-select" id="course" formControlName="course">
+                <option *ngFor="let item of courses" value="{{ item.course }}">
+                  {{ item.course }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="teachClass" class="col-sm-2 col-form-label"
+              >Select Class :</label
+            >
+            <div class="col-sm-3">
+              <select
+                class="form-select"
+                id="teachClass"
+                formControlName="teachClass"
+              >
+                <option
+                  *ngFor="let item of classes"
+                  value=" {{ item.className }}"
+                >
+                  {{ item.className }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="container action">
+            <button
+              type="button"
+              class="btn btn-success action-1"
+              (click)="onSave()"
+            >
+              Save
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary action-1"
+              (click)="onBack()"
+            >
+              Back
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

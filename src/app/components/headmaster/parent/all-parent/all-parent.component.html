@@ -1,0 +1,55 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="tabs col-12">
+      <div class="data">
+        <h3>Parent Data</h3>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Name Father</th>
+            <th scope="col">Name Mother</th>
+            <th scope="col">Name Student</th>
+            <th scope="col">Status</th>
+            <th scope="col" style>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="teacher-data" *ngFor="let item of parents; let i = index">
+            <th scope="row" class="id">{{ i + 1 }}</th>
+            <td>{{ item.father }}</td>
+            <td>{{ item.mother }}</td>
+            <td *ngFor="let a of item.student">{{ a.fullName }}</td>
+            <td>{{ item.status }}</td>
+            <td class="see">
+              <button class="btn btn-primary" (click)="onDetail(item)">
+                <fa-icon [icon]="faSearch"></fa-icon>
+              </button>
+              <button
+                class="btn btn-warning"
+                style="color: #ffff"
+                (click)="onEdit(item)"
+              >
+                <fa-icon [icon]="faEdit"></fa-icon>Edit
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <button
+                routerLink="/headmaster/parent/create"
+                routerLinkActive="active"
+                class="btn btn-primary"
+              >
+                Add New Parent
+              </button>
+            </td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

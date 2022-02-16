@@ -1,0 +1,119 @@
+<div class="img"></div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 mt-5">
+      <div class="card1">
+        <div class="card">
+          <div class="header text-center">
+            <img
+              src="/assets/img/pngwing.com.png"
+              alt="logo1.jpg"
+              width="100px"
+              height="100px"
+            />
+            <img src="" alt="" />
+            <br />
+            <br />
+            SDN SUKAMAJU
+            <p>
+              <b>Sekolah Dasar Negeri Sukamaju</b>
+            </p>
+          </div>
+          <div class="card-body bg-white">
+            <mat-spinner *ngIf="!spinner"></mat-spinner>
+            <form [formGroup]="login" *ngIf="spinner">
+              <div class="mb-2">
+                <label for="email" class="form-label"></label>
+                <input
+                  type="email"
+                  class="form-control"
+                  formControlName="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                  aria-describedby="emailHelp"
+                  required
+                />
+                <span
+                  id="inputError"
+                  *ngIf="
+                    !login.get('email')?.valid && login.get('email')?.touched
+                  "
+                  >Email not match! Please Insert a Match Registered Email</span
+                >
+              </div>
+              <div class="mb-4">
+                <label for="password" class="form-label"></label>
+                <input
+                  type="password"
+                  class="form-control"
+                  name="password"
+                  formControlName="password"
+                  id="password"
+                  placeholder="Password"
+                  required
+                />
+                <span
+                  id="inputError"
+                  *ngIf="
+                    !login.get('password')?.valid &&
+                    login.get('password')?.touched
+                  "
+                  >Password not match! Please Insert a Match Registered
+                  Password</span
+                >
+              </div>
+              <div class="col-md-3">
+                <label for="role" class="form-label">Login For</label>
+                <span id="inputErrorSelect">(Required!)</span>
+                <select
+                  class="form-select"
+                  id="role"
+                  aria-describedby="role"
+                  required
+                  formControlName="role"
+                >
+                  <option selected disabled value="">Choose...</option>
+                  <option value="Headmaster">Headmaster</option>
+                  <option value="Teacher">Teacher</option>
+                  <option value="Student">Student</option>
+                  <option value="Parent">Parent</option>
+                </select>
+                <div id="validationServer04Feedback" class="invalid-feedback">
+                  Please select a valid state.
+                </div>
+              </div>
+              <div class="mb-3 form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="exampleCheck1"
+                />
+                <label class="form-check-label" for="exampleCheck1"
+                  >Remember me</label
+                >
+              </div>
+              <div class="footer">
+                <div class="d-grid gap-2">
+                  <button
+                    type="submit"
+                    class="btn btn-success btn-blocks"
+                    (click)="onLogin()"
+                  >
+                    Masuk
+                  </button>
+                  <strong
+                    ><a routerLink="/forgotPassword" routerLinkActive="active" class="element.style" style="color: red"
+                      >Forgot Password?</a
+                    ></strong
+                  >
+                </div>
+              </div>
+            </form>
+            <div class="text-center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

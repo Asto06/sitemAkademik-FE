@@ -1,0 +1,85 @@
+.tabs {
+  margin: auto;
+  width: 100%;
+  border: 2px solid black;
+  margin-left: 0;
+  margin-top: 10px;
+  background-color: #eeeeee;
+  border-radius: 10px;
+  overflow-x: scroll;
+}
+
+h3 {
+  text-transform: uppercase;
+}
+
+thead {
+  text-align: center;
+}
+
+.data {
+  border-radius: 10px 10px 0px 0px;
+  background-color: #cd1818;
+  margin-left: -10px;
+  margin-top: -10px;
+  margin-right: -10px;
+  border-bottom: 2px solid black;
+  text-align: center;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+a {
+  margin-right: 4px;
+  padding: 5px;
+  transition: 0.2s;
+  color: #ffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 14px;
+}
+
+button {
+  margin-right: 5px;
+}
+
+.see,
+.desc {
+  text-align: center;
+}
+
+table {
+  text-align: center;
+}
+
+#add {
+  margin-top: 20px;
+}
+
+@media all and (max-width: 1064px) {
+  .tabs {
+    width: 75%;
+  }
+}
+
+@media all and (max-width: 992px) {
+  .tabs {
+    margin-left: 0px;
+    width: 100%;
+    margin: auto;
+    font-size: 10px;
+  }
+  .btn {
+    font-size: 10px;
+    display: flex;
+    margin: auto;
+    margin-top: 5px;
+  }
+}
+
+#description .row {
+  text-align: left;
+}

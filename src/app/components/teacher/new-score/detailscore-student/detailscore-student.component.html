@@ -1,0 +1,65 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row mt-4">
+      <div class="title col-4">
+        <p><strong>ID</strong></p>
+      </div>
+      <div class="is col-1"><p>:</p></div>
+      <div class="desc col-4">
+        <p>{{ students?._id }}</p>
+      </div>
+      <div class="title col-4">
+        <p><strong>Email</strong></p>
+      </div>
+      <div class="is col-1"><p>:</p></div>
+      <div class="desc col-4">
+        <p>{{ students?.email }}</p>
+      </div>
+      <div class="title col-4">
+        <p><strong>Name</strong></p>
+      </div>
+      <div class="is col-1"><p>:</p></div>
+      <div class="desc col-4">
+        <p>{{ students?.fullName }}</p>
+      </div>
+    </div>
+    <div class="tabs col-12 shadow">
+      <div class="data">
+        <h3>Score Student</h3>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Course</th>
+            <th scope="col">Daily Score</th>
+            <th scope="col">Midtest Score</th>
+            <th scope="col">Final Score</th>
+            <th scope="col">Result Score</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of students?.score; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.course.course }}</td>
+            <td>{{ item.dailyScore }}</td>
+            <td>{{ item.midtest }}</td>
+            <td>{{ item.finaltest }}</td>
+            <td>{{ item.resultScore }}</td>
+            <td>
+              <button class="btn btn-warning" (click)="onEdit(item)">
+                <fa-icon [icon]="faEdit"></fa-icon>Edit
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button class="btn btn-primary" (click)="onBack()">Back</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

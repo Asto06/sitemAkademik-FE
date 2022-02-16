@@ -1,0 +1,38 @@
+<app-header></app-header>
+<app-teachersidebar></app-teachersidebar>
+<div class="content-wrapper">
+  <section id="profilsiswa">
+    <div class="container mt-5">
+      <div class="card m-auto" style="max-width: 90%">
+        <h2 class="text-center">
+          {{ homeClass.className }}<br />
+          {{ homeClass.semester }}<br />
+          {{ homeClass.yearAcademic }}<br />
+        </h2>
+        <h2 class="text-center"></h2>
+        <div class="card-body">
+          <table class="table table-responsive-lg table-bordered">
+            <thead>
+              <tr class="table-range">
+                <th class="text-center">No</th>
+                <th class="text-center">NIS</th>
+                <th class="text-center">Name</th>
+                <th class="text-center course">Email</th>
+                <th class="text-center course">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of homeClass.student; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ item._id }}</td>
+                <td>{{ item.fullName }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.status }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,58 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="tabs col-12 shadow">
+      <div class="standart">
+        <h1>Class Detail</h1>
+      </div>
+      <mat-spinner *ngIf="!spinner" class="spinner"></mat-spinner>
+      <div class="headers" *ngIf="spinner">
+        <div class="row">
+          <div class="title col-2">
+            <p><strong>ID Class</strong></p>
+          </div>
+          <div class="is col-2"><p>:</p></div>
+          <div class="desc col-2"><p>{{classes?._id}}</p></div>
+        </div>
+        <div class="row">
+          <div class="title col-2">
+            <p><strong>Classname</strong></p>
+          </div>
+          <div class="is col-2"><p>:</p></div>
+          <div class="desc col-2"><p>{{classes?.className}}</p></div>
+        </div>
+        <div class="row">
+          <div class="title col-2">
+            <p><strong>Semester</strong></p>
+          </div>
+          <div class="is col-2"><p>:</p></div>
+          <div class="desc col-2"><p>{{classes?.semester}}</p></div>
+        </div>
+        <div class="row">
+          <div class="title col-2">
+            <p><strong>Year Academic</strong></p>
+          </div>
+          <div class="is col-2"><p>:</p></div>
+          <div class="desc col-2"><p>{{classes?.yearAcademic}}</p></div>
+        </div>
+        <div class="row">
+          <div class="title col-2">
+            <p><strong>Homeroom Teacher</strong></p>
+          </div>
+          <div class="is col-2"><p>:</p></div>
+          <div class="desc col-2">
+            <p>{{classes?.homeTeacher}}</p>
+          </div>
+        </div>
+        <div class="container action mt-2 mb-2">
+          <button
+            type="button"
+            class="btn btn-primary action-1"
+            (click)="onBack()"
+          >
+            Back
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

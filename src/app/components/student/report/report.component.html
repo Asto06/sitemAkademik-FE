@@ -1,0 +1,66 @@
+<app-header></app-header>
+<app-sidebar-student></app-sidebar-student>
+<div class="content-wrapper">
+  <section id="name">
+    <div class="container mt-3">
+      <div class="card1" style="max-width: 100%">
+        <div class="header text-center mb-4">REPLAY REPORT</div>
+        <div class="card-body">
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <td>ID</td>
+                <td>: {{ students?._id }}</td>
+              </tr>
+              <tr>
+                <td>Name</td>
+                <td>: {{ students?.fullName }}</td>
+              </tr>
+              <tr>
+                <td>Class</td>
+                <td>: {{ students?.classes?.className }}</td>
+              </tr>
+              <tr>
+                <td>Semester</td>
+                <td>: {{ students?.classes?.semester }}</td>
+              </tr>
+              <tr>
+                <td>School Year</td>
+                <td>: {{ students?.classes?.yearAcademic }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="card bg mb-3" style="max-width: 100%">
+    <div class="card-body" style="background-color: white">
+      <div class="table-responsive-sm">
+        <table class="table table-bordered mb-5">
+          <thead>
+            <tr class="head text-center">
+              <th scope="col">No</th>
+              <th scope="col">Course</th>
+              <th scope="col">Daily Score</th>
+              <th scope="col">Mid Score</th>
+              <th scope="col">Final Score</th>
+              <th scope="col">Result Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of students?.score; let i=index">
+              <th scope="row">{{ i+1 }}</th>
+              <td>{{ item.course.course }}</td>
+              <td>{{ item.dailyScore }}</td>
+              <td>{{ item.midtest }}</td>
+              <td>{{ item.finaltest }}</td>
+              <td>{{ item.resultScore }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+

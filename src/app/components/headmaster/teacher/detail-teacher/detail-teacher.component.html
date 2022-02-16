@@ -1,0 +1,45 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="tabs col-12 shadow">
+      <div class="data">
+        <h3>Teacher Detail</h3>
+      </div>
+      <table class="table">
+        <mat-spinner *ngIf="!spinner" class="spinner"></mat-spinner>
+        <tbody *ngIf="spinner">
+          <tr>
+            <th scope="row">NIP</th>
+            <td>:</td>
+            <td colspan="3">{{teachers?._id}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Name</th>
+            <td>:</td>
+            <td colspan="3">{{teachers?.fullName}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Date of Birth</th>
+            <td>:</td>
+            <td colspan="3">{{teachers?.birthDate}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Email</th>
+            <td>:</td>
+            <td colspan="2">{{teachers?.email}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Course</th>
+            <td>:</td>
+            <td colspan="2" *ngFor="let a of teachers?.course">{{a?.course}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Class of Teach</th>
+            <td>:</td>
+            <td colspan="2" *ngFor="let a of teachers?.teachClass">{{a?.className}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button *ngIf="spinner" class="btn btn-primary mb-3" (click)="onBack()">Back</button>
+    </div>
+  </div>
+</div>

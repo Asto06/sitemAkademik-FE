@@ -1,0 +1,47 @@
+<div class="content-wrapper">
+  <div class="container set">
+    <div class="container title-form">
+      <h2>Set or Update Spesific Course</h2>
+    </div>
+  
+    <div class="container body-form">
+      <mat-spinner *ngIf="!spinner" class="spinner"></mat-spinner>
+      <form [formGroup]="updateCourseForm" class="row g-3 mt-2" *ngIf="spinner">
+        <div class="mb-3 row">
+          <label for="teacher" class="col-sm-5 col-form-label"
+            >Select Teacher</label
+          >
+          <div class="col-sm-5">
+            <select class="form-select" id="teacher" formControlName="teacher">
+              <option *ngFor="let item of teachers" value="{{item.fullName}}">{{item.fullName}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="courseBefore" class="col-sm-5 col-form-label"
+            >Please Select The Previous Course Teacher</label
+          >
+          <div class="col-sm-5">
+            <select class="form-select" id="courseBefore" formControlName="courseBefore">
+              <option *ngFor="let item of courses" value="{{item.course}}">{{item.course}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="courseAfter" class="col-sm-5 col-form-label"
+            >Please Select The New Course Teacher</label
+          >
+          <div class="col-sm-5">
+            <select class="form-select" id="courseAfter" formControlName="courseAfter">
+              <option *ngFor="let item of courses" value="{{item.course}}">{{item.course}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-auto">
+          <button type="button" class="btn btn-primary ms-2 mb-2" (click)="onBack()">Back</button>
+          <button type="button" class="btn btn-success ms-2 mb-2" (click)="onSave()">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="tabs col-12">
+      <div class="data">
+        <h3>Managing Grade Your Class</h3>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Name Student</th>
+            <th scope="col">Grade</th>
+            <th scope="col" style>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr
+            class="teacher-data"
+            *ngFor="let item of student.student; let i = index"
+          >
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.fullName }}</td>
+            <td>{{ item.grade?.grade }}</td>
+            <td class="see">
+              <button class="btn btn-warning" (click)="onDetail(item)">
+                <fa-icon [icon]="faSearch"></fa-icon> Check
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <button class="btn btn-primary" (click)="onSetGrade()">Set Grade Student</button>
+            </td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

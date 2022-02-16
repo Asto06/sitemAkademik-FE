@@ -1,0 +1,45 @@
+.set {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 0;
+}
+.set .title-form {
+  border-radius: 10px 10px 0px 0px;
+  background-color: red;
+  margin: 0;
+  text-align: center;
+}
+.set .title-form h2 {
+  font-size: 25px;
+  padding: 10px;
+}
+mat-spinner {
+  margin: auto;
+}
+.set .body-form {
+  margin-top: 20px;
+}
+.set .action {
+  margin: 40px 0px 10px 0px;
+  padding: 10px;
+}
+.set .action .action-1 {
+  width: 100px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border: none;
+  transition: 0.4s;
+}
+.set .action .action-2 {
+  width: 100px;
+  background-color: rgb(216, 216, 216);
+  border: none;
+  transition: 0.4s;
+}
+.set .action .action-1:hover {
+  background-color: rgb(167, 171, 255);
+}
+.set .action .action-2:hover {
+  background-color: rgb(167, 171, 255);
+}

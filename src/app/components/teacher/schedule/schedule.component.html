@@ -1,0 +1,71 @@
+<app-header></app-header>
+<app-teachersidebar></app-teachersidebar>
+<div class="content-wrapper">
+  <div class='demo-app'>
+
+    <div class='demo-app-sidebar'>
+      <div class='demo-app-sidebar-section'>
+
+        <button>Add Schedule</button>
+  <!-- test for angular datepicker -->
+  <!-- <div>{{this.getEvent}}</div> -->
+
+  
+
+
+  <!-- <mat-form-field appearance="fill">
+    <mat-label>Input & change events</mat-label>
+    <input matInput [matDatepicker]="picker"
+           (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  
+  <div class="example-events">
+    <div *ngFor="let e of events">{{e}}</div>
+  </div> -->
+  
+      </div>
+      <!-- <div class='demo-app-sidebar-section'>
+        <label>
+          <input
+            type='checkbox'
+            [checked]='calendarVisible'
+            (change)='handleCalendarToggle()'
+          />
+          toggle whole calendar
+        </label>
+      </div>
+      <div class='demo-app-sidebar-section'>
+        <label>
+          <input
+            type='checkbox'
+            [checked]='calendarOptions.weekends'
+            (change)='handleWeekendsToggle()'
+          />
+          toggle weekends
+        </label>
+      </div> -->
+      <!-- <div class='demo-app-sidebar-section'>
+        <h2>All Events ({{currentEvents.length}})</h2>
+        <ul>
+          <li *ngFor='let event of currentEvents'>
+            <b>{{event.startStr}}</b>
+            <i>{{event.title}}</i>
+          </li>
+        </ul>
+      </div>
+    </div> -->
+    <!-- <div class='demo-app-main'>
+      <full-calendar
+        *ngIf='calendarVisible'
+        [options]='calendarOptions'
+      ></full-calendar>
+    </div> -->
+  </div>
+</div>
+<full-calendar
+*ngIf='calendarVisible'
+[options]='calendarOptions'
+></full-calendar>
+

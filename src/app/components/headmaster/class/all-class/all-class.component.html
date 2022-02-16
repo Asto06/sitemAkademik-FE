@@ -1,0 +1,80 @@
+<div class="content-wrapper">
+  <div class="container-fluid" id="description">
+    <!-- <div class="row">
+      <div class="title col-4">
+        <p><strong>Class </strong></p>
+      </div>
+      <div class="is col-2"><p>:</p></div>
+      <div class="desc col-4"><p>IV</p></div>
+    </div>
+    <div class="row">
+      <div class="title col-4">
+        <p><strong> Semester</strong></p>
+      </div>
+      <div class="is col-2"><p>:</p></div>
+      <div class="desc col-4"><p>odd</p></div>
+    </div>
+    <div class="row">
+      <div class="title col-4">
+        <p><strong>HomeroomTeacher </strong></p>
+      </div>
+      <div class="is col-2"><p>:</p></div>
+      <div class="desc col-4"><p>Eva</p></div>
+    </div>
+    <div class="row">
+      <div class="title col-4">
+        <p><strong>Academic Year</strong></p>
+      </div>
+      <div class="is col-2"><p>:</p></div>
+      <div class="desc col-4"><p>2021/2022</p></div>
+    </div> -->
+    <div class="tabs col-12 shadow">
+      <div class="data">
+        <h3>Class data</h3>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Name Class</th>
+            <th scope="col">Semester</th>
+            <th scope="col">Homeroom Teacher</th>
+            <th scope="col">Year Academic</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="teacher-data" *ngFor="let item of classes; let i=index">
+            <th scope="row" class="id">{{i+1}}</th>
+            <td class="name">{{item.className}}</td>
+            <td class="name">{{item.semester}}</td>
+            <td class="name">{{item.homeTeacher?.homeroomName?.fullName}}</td>
+            <td class="name">{{item.yearAcademic}}</td>
+            <td class="desc">
+              <button class="btn btn-primary" (click)="onDetail(item)">
+                <fa-icon [icon]="faSearch"></fa-icon>
+              </button>
+              <button class="btn edit btn-warning" style="color: #ffff" (click)="onEdit(item)">
+                  <fa-icon [icon]="faEdit"></fa-icon>Edit
+              </button>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <button
+                type="button"
+                class="btn btn-primary"
+                routerLink="/headmaster/class/create"
+                routerLinkActive="active"
+              >
+                Add New Class
+              </button>
+            </td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

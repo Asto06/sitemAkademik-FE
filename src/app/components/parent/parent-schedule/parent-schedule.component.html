@@ -1,0 +1,15 @@
+<app-parent-header></app-parent-header>
+<app-parent-sidebar></app-parent-sidebar>
+<div class="content-wrapper">
+  <div class="demo-app">
+    <div class="demo-app-sidebar">
+      <div class="demo-app-sidebar-section">
+        <button>Add Schedule</button>
+      </div>
+    </div>
+  </div>
+  <full-calendar
+    *ngIf="calendarVisible"
+    [options]="calendarOptions"
+  ></full-calendar>
+</div>

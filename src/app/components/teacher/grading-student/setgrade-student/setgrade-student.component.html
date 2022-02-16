@@ -1,0 +1,57 @@
+<div class="content-wrapper">
+  <div class="container col-sm-11 set">
+    <div class="container-fluid title-form">
+      <h2>Set Grade For Student</h2>
+    </div>
+
+    <div class="container body-form">
+      <mat-spinner *ngIf="!spinner" class="spinner"></mat-spinner>
+      <form [formGroup]="setGradeForm" class="row g-3 mt-3" *ngIf="spinner">
+        <div class="mb-3 row">
+          <label for="grade" class="col-sm-4 col-form-label"
+            >Select Grade for Student</label
+          >
+          <div class="col-sm-8">
+            <select class="form-select" id="grade" formControlName="grade">
+              <option *ngFor="let item of grades" value="{{ item.grade }}">
+                {{ item.grade }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <label for="student" class="col-sm-4 col-form-label"
+            >Select Student</label
+          >
+          <div class="col-sm-8">
+            <select class="form-select" id="student" formControlName="student">
+              <option
+                *ngFor="let item of student.student"
+                value="{{ item.fullName }}"
+              >
+                {{ item.fullName }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="container action">
+          <button
+            type="button"
+            class="btn btn-success action-1"
+            (click)="onSave()"
+          >
+            Save
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary action-1"
+            (click)="onBack()"
+          >
+            Back
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

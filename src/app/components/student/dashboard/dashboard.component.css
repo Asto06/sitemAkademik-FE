@@ -1,0 +1,23 @@
+.content-wrapper {
+  margin-top: 10px;
+  background-image: url(/assets/img/avXg0ewYQV.jpeg);
+}
+.m-0 {
+  color: white;
+  text-shadow: 2px 2px 3px gray;
+  text-transform: uppercase;
+}
+.small-box {
+  box-shadow: 4px 5px 7px gray;
+}
+.card {
+  border: 2px solid black;
+  box-shadow: 4px 5px 9px black;
+}
+.text-center {
+  color: white;
+  text-transform: uppercase;
+}
+.header {
+  border-bottom: 2px solid #000;
+}

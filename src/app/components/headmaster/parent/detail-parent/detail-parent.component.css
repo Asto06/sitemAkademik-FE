@@ -1,0 +1,41 @@
+.tabs {
+  margin: auto;
+  width: 100%;
+  border: 2px solid black;
+  margin-left: 0;
+  margin-top: 10px;
+  background-color: #eeeeee;
+  border-radius: 10px;
+  overflow-x: scroll;
+}
+.standart {
+  text-align: center;
+  font-size: 100px;
+  color: #fff;
+  margin-left: -12.5px;
+  margin-right: -12.5px;
+  background-color: #cd1818;
+  border-bottom: 2px solid black;
+  border-radius: 10px 10px 0px 0px;
+}
+.headers {
+  margin-top: 30px;
+}
+mat-spinner {
+  margin: auto;
+}
+.row {
+  margin-top: 10px;
+}
+
+.course {
+  margin-top: 100px;
+  align-items: center;
+}
+table {
+  text-align: center;
+}
+.action {
+  margin: 40px 0px 10px 0px;
+  padding: 10px;
+}

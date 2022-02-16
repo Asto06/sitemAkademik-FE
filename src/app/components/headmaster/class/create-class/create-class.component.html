@@ -1,0 +1,60 @@
+<div class="container col-sm-9 set">
+  <div class="container title-form">
+    <h2>Create New Class</h2>
+  </div>
+
+  <div class="container body-form">
+    <mat-spinner *ngIf="!spinner" class="spinner"></mat-spinner>
+    <form [formGroup]="createFormClass" *ngIf="spinner">
+      
+      <div class="mb-3 row">
+        <label for="yearAcademic" class="col-sm-2 col-form-label"
+          >Year Academic</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="yearAcademic"
+            placeholder="Example: 2022"
+            formControlName="yearAcademic"
+          />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="nameclass" class="col-sm-2 col-form-label"
+          >Name Class</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="nameclass"
+            placeholder="Example: Class I"
+            formControlName="className"
+          />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="semester" class="col-sm-2 col-form-label"
+          >Semester</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="semester"
+            placeholder="Example: Odd"
+            formControlName="semester"
+          />
+        </div>
+      </div>
+      <div class="container action">
+        <button class="btn btn-primary action-1" (click)="onSubmit()">
+          Save
+        </button>
+        <button class="btn action-2" (click)="onCancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

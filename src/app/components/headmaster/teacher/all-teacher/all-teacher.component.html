@@ -1,0 +1,54 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="tabs col-12 shadow">
+      <div class="data">
+        <h3>Teacher Data</h3>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">NIP</th>
+            <th scope="col">Name</th>
+            <th scope="col">Birthday</th>
+            <th scope="col">Course</th>
+            <th scope="col" style>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="teacher-data" *ngFor="let item of teachers; let i = index">
+            <td scope="row">{{ i + 1 }}</td>
+            <td class="name">{{ item._id }}</td>
+            <td class="gender">{{ item.fullName }}</td>
+            <td class="teach">{{ item.birthDate }}</td>
+            <td class="teach" *ngFor="let a of item.course">{{ a.course }}</td>
+            <td class="see">
+              <button class="btn btn-primary" (click)="onDetail(item)">
+                <fa-icon [icon]="faSearch"></fa-icon>
+              </button>
+              <button class="btn btn-warning" style="color: #ffff" (click)="onEdit(item)">
+                <fa-icon [icon]="faEdit"></fa-icon>Edit
+            </button>
+            </td>
+              <!-- <button class="btn btn-danger" (click)="onError()">
+                <fa-icon [icon]="faEraser"></fa-icon>delete
+              </button> -->
+          </tr>
+          <tr>
+            <td colspan="2">
+              <button
+                class="btn btn-primary"
+                routerLink="/headmaster/teacher/create"
+                routerLinkActive="active"
+              >
+                Add New Teacher
+              </button>
+            </td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

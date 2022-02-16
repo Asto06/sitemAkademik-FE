@@ -1,0 +1,146 @@
+<app-header></app-header>
+<app-teachersidebar></app-teachersidebar>
+<div class="content-wrapper">
+  <div class="container">
+    <div class="row mb-3">
+      <div class="card text-white bg mb-3" style="max-width: 75%">
+        <div class="card-header">KELOLA NILAI MATA PELAJARAN</div>
+        <div class="card-body" style="background-color: white">
+          <form
+            name="form"
+            (ngSubmit)="f.form.valid && onSubmit()"
+            #f="ngForm"
+            novalidate
+          >
+            <table class="table mb-5 table-bordered">
+              <tbody>
+                <tr>
+                  <th class="dropdown text-left" scope="row">Academic Year</th>
+                  <td>
+                    <select
+                      class="form-select"
+                      id="inputGroupSelect01"
+                      (change)="selectedAcademicYear($event)"
+                    >
+                      <option selected disabled value="">Select year</option>
+                      <option value="2020">2020</option>
+                      <option value="2021">2021</option>
+                      <option value="2022">2022</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="text-left" scope="row">Semester</th>
+                  <td>
+                    <select
+                      class="form-select"
+                      id="inputGroupSelect01"
+                      (change)="selectedSemester($event)"
+                    >
+                      <option selected disabled value="">
+                        Select semester
+                      </option>
+                      <option value="Odd">odd</option>
+                      <option value="Even">even</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="text-left" scope="row text-left">Class</th>
+                  <td>
+                    <select
+                      class="form-select"
+                      id="inputGroupSelect01"
+                      (change)="selectedClasses($event)"
+                    >
+                      <option selected disabled value="">Select class</option>
+                      <option value="Class I">I</option>
+                      <option value="Class II">II</option>
+                      <option value="Class III">III</option>
+                    </select>
+                  </td>
+                </tr>
+              </tbody>
+              <button class="btn btn-primary mt-2">Search</button>
+            </table>
+          </form>
+          <div class="table-responsive-sm">
+            <table class="table table-bordered mb-5">
+              <thead id="header-fixed">
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">NIS</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Daily Tests</th>
+                  <th scope="col">Middterm Tests</th>
+                  <th scope="col">Final Tests</th>
+                  <th scope="col">Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let student of scores.student; let i = index">
+                  <th scope="row">{{ i + 1 }}</th>
+                  <td>{{ student.nis }}</td>
+                  <td>{{ student.fullName }}</td>
+                  <ng-container *ngFor="let score of student.score">
+                    <td
+                      class="text-center"
+                      *ngIf="score.course!.course == 'IPA'"
+                    >
+                      <input type="hidden" value="{{ score._id }}" #id />
+                      {{ score.dailyScore }}
+                      <a (click)="update(id.value, 'dailyScore')"
+                        ><button
+                          type="button"
+                          class="btn edit"
+                          style="width: 40px"
+                        >
+                          <i class="far fa-edit"></i></button
+                      ></a>
+                    </td>
+                    <td
+                      class="text-center"
+                      *ngIf="score.course!.course == 'IPA'"
+                    >
+                      <input type="hidden" value="{{ score._id }}" #id />
+                      {{ score.midtest }}
+                      <a (click)="update(id.value, 'midtest')"
+                        ><button
+                          type="button"
+                          class="btn edit"
+                          style="width: 40px"
+                        >
+                          <i class="far fa-edit"></i></button
+                      ></a>
+                    </td>
+                    <td
+                      class="text-center"
+                      *ngIf="score.course!.course == 'IPA'"
+                    >
+                      <input type="hidden" value="{{ score._id }}" #id />
+                      {{ score.finaltest }}
+                      <a (click)="update(id.value, 'finaltest')"
+                        ><button
+                          type="button"
+                          class="btn edit"
+                          style="width: 40px"
+                        >
+                          <i class="far fa-edit"></i></button
+                      ></a>
+                    </td>
+                    <td
+                      class="text-center"
+                      *ngIf="score.course!.course === 'IPA'"
+                    >
+                      {{ score.resultScore }}
+                    </td>
+                  </ng-container>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

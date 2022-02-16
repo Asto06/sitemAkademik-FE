@@ -1,0 +1,79 @@
+<div class="container col-sm-9 set">
+  <div class="container title-form">
+    <h2>Create New Student</h2>
+  </div>
+
+  <div class="container body-form">
+    <mat-spinner *ngIf="!spinner" class="spinner"></mat-spinner>
+    <form [formGroup]="createFormStudent" *ngIf="spinner">
+      <div class="mb-3 row">
+        <label for="fullname" class="col-sm-2 col-form-label">Fullname</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="fullname"
+            placeholder="Fullname"
+            formControlName="fullName"
+          />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="email" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Email"
+            formControlName="emailSend"
+          />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="birthday" class="col-sm-2 col-form-label">Birthday</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="birthday"
+            placeholder="dd-mm-yyyy"
+            formControlName="birthDate"
+          />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="classes" class="col-sm-2 col-form-label"
+          >Select Class :</label
+        >
+        <div class="col-sm-3">
+          <select class="form-select" id="classes" formControlName="classes">
+            <option selected disabled value=""></option>
+            <option *ngFor="let item of class" value="{{ item.className }}">
+              {{ item.className }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="semester" class="col-sm-2 col-form-label"
+          >Select Semester :</label
+        >
+        <div class="col-sm-3">
+          <select class="form-select" id="semester" formControlName="semester">
+            <option selected disabled value=""></option>
+            <option *ngFor="let item of class" value="{{ item.semester }}">
+              {{ item.semester }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="container action">
+        <button class="btn btn-primary action-1" (click)="onSubmit()">
+          Save
+        </button>
+        <button class="btn action-2" (click)="onCancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

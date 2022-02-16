@@ -1,0 +1,73 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2 mt-2">
+        <p><b>ID</b></p>
+      </div>
+      <div class="col-md-1 mt-2">
+        <p><b>:</b></p>
+      </div>
+      <div class="col-md-8 mt-2">
+        <p><b>{{ students?._id }}</b></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 mt-2">
+        <p><b>Email</b></p>
+      </div>
+      <div class="col-md-1 mt-2">
+        <p><b>:</b></p>
+      </div>
+      <div class="col-md-8 mt-2">
+        <p><b>{{ students?.email }}</b></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 mt-2">
+        <p><b>Name</b></p>
+      </div>
+      <div class="col-md-1 mt-2">
+        <p><b>:</b></p>
+      </div>
+      <div class="col-md-8 mt-2">
+        <p><b>{{ students?.fullName }}</b></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 mt-2">
+        <p><b>Grade</b></p>
+      </div>
+      <div class="col-md-1 mt-2">
+        <p><b>:</b></p>
+      </div>
+      <div class="col-md-8 mt-2">
+        <p><b>{{ students?.grade?.grade }}</b></p>
+      </div>
+    </div>
+    <div class="tabs col-12">
+      <div class="data">
+        <h3>Detail Student Grade and Score</h3>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Course</th>
+            <th scope="col">Result Score</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="teacher-data" *ngFor="let item of students?.score">
+            <td>{{ item.course.course }}</td>
+            <td>{{ item.resultScore }}</td>
+          </tr>
+          <tr>
+            <td>
+              <button class="btn btn-primary" (click)="onBack()">Back</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

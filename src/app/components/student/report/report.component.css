@@ -1,0 +1,46 @@
+.navbar,
+.container {
+  max-width: 75%;
+  margin: auto;
+  justify-content: center;
+}
+.school {
+  font-weight: bold;
+}
+.street {
+  margin: auto;
+  padding: 1px;
+  text-align: center;
+  padding-top: 10px;
+}
+.card {
+  margin: 20px auto;
+  background-color: initial;
+}
+.form-control {
+  padding: 0px;
+}
+.container {
+  max-width: 100%;
+  background-color: #fff;
+}
+.card1 {
+  margin: 20px auto;
+  background-color: white;
+}
+.header {
+  font-weight: bold;
+  font-size: 24px;
+}
+.head {
+  background-color: rgb(255, 85, 85);
+}
+.head .col {
+  font-size: 17px;
+  text-align: center;
+}
+.total,
+.rank {
+  background-color: rgb(214, 0, 0);
+  font-weight: bold;
+}

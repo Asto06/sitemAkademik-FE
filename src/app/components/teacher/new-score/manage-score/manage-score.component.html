@@ -1,0 +1,86 @@
+<div class="content-wrapper">
+  <div class="container col-sm-11 set">
+    <div class="container-fluid title-form">
+      <h2>Manage Score of Course For Student</h2>
+    </div>
+
+    <div class="container body-form">
+      <mat-spinner *ngIf="!spinner" class="spinner"></mat-spinner>
+      <form [formGroup]="manageScoreForm" class="row g-3 mt-3" *ngIf="spinner">
+        <div class="mb-3 row">
+          <label for="course" class="col-sm-2 col-form-label">Course</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              readonly
+              class="form-control"
+              id="course"
+              formControlName="course"
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="dailyScore" class="col-sm-2 col-form-label">Daily Score</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="dailyScore"
+              formControlName="dailyScore"
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="midtest" class="col-sm-2 col-form-label">Midtest Score</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="midtest"
+              formControlName="midtest"
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="finaltest" class="col-sm-2 col-form-label">Finaltest Score</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="finaltest"
+              formControlName="finaltest"
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="resultScore" class="col-sm-2 col-form-label">Result Score</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              readonly
+              class="form-control"
+              id="resultScore"
+              formControlName="resultScore"
+            />
+          </div>
+        </div>
+        
+        <div class="container action">
+          <button
+            type="button"
+            class="btn btn-success action-1"
+          >
+            Save
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary action-1"
+            (click)="onBack()"
+          >
+            Back
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

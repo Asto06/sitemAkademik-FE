@@ -1,0 +1,82 @@
+<div class="container col-sm-9 set">
+  <div class="container title-form">
+    <h2>Create New Parent</h2>
+  </div>
+
+  <div class="container body-form">
+    <mat-spinner *ngIf="!spinner" class="spinner"></mat-spinner>
+    <form [formGroup]="createFormParent" *ngIf="spinner">
+      <div class="mb-3 row">
+        <label for="email" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Email"
+            formControlName="emailSend"
+          />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="father" class="col-sm-2 col-form-label">Name Father</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="father"
+            placeholder="Father"
+            formControlName="father"
+          />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="mother" class="col-sm-2 col-form-label">Name Mother</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="mother"
+            placeholder="Mother"
+            formControlName="mother"
+          />
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="birthDate" class="col-sm-2 col-form-label"
+          >Birthday Father</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="birthDate"
+            placeholder="dd-mm-yyyy"
+            formControlName="birthDate"
+          />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="student" class="col-sm-2 col-form-label"
+          >Name Student</label
+        >
+        <div class="col-sm-10">
+          <input
+            type="text"
+            class="form-control"
+            id="student"
+            placeholder="Student"
+            formControlName="student"
+          />
+        </div>
+      </div>
+      <div class="container action">
+        <button class="btn btn-primary action-1" (click)="onSubmit()">
+          Save
+        </button>
+        <button class="btn action-2" (click)="onCancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

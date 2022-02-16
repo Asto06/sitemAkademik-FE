@@ -1,0 +1,43 @@
+<app-header></app-header>
+<app-teachersidebar></app-teachersidebar>
+<div class="content-wrapper">
+  <div class="container col-sm-11 set">
+    <div class="container-fluid title-form">
+      <h2>Add Score</h2>
+    </div>
+
+    <div class="container body-form">
+      <!-- <mat-spinner *ngIf="!spinner" class="spinner"></mat-spinner> -->
+      <form class="row g-3">
+        <div class="col-2">
+          <label for="fullname">SCORE</label>
+        </div>
+        <div class="col-8">
+          <label for="fullname-1" class="visually-hidden">score</label>
+          <input
+            type="text"
+            class="form-control"
+            id="score"
+            value="{{score.dailyScore}}"
+          />
+        </div>
+        <div class="col-auto">
+          <button
+            type="button"
+            class="btn btn-primary mb-2"
+            (click)="onUpdate()"
+          >
+            Update
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger mb-2"
+            (click)="onCancel()"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

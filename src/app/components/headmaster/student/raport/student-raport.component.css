@@ -1,0 +1,10 @@
+.container-sm{
+  box-sizing: content-box;
+  margin-left:290px;
+  margin-block-end:200px;
+  margin-top: 30px;
+}
+
+.header{
+  background-color: rgb(197, 82, 82);
+}

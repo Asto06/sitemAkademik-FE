@@ -1,0 +1,61 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <form [formGroup]="searchingForm" class="mt-4">
+      <div class="mb-3 row">
+        <label for="className" class="col-sm-3 col-form-label"
+          >Select Class
+        </label>
+        <div class="col-sm-6">
+          <select
+            class="form-select"
+            id="className"
+            formControlName="className"
+          >
+            <option *ngFor="let item of classes" value="{{ item.className }}">
+              {{ item.className }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="container action">
+        <button class="btn btn-primary action-1" (click)="onAddScore()">
+          Add New Score Field
+        </button>
+        <button class="btn btn-primary action-1" (click)="onSearch()">
+          Search
+        </button>
+      </div>
+    </form>
+    <div class="tabs col-12">
+      <div class="data">
+        <h3>Score Data By Searching Class</h3>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">Name Student</th>
+            <th scope="col">Status</th>
+            <th scope="col" style>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr
+            class="teacher-data"
+            *ngFor="let item of scores.student; let i = index"
+          >
+            <td>{{ i + 1 }}</td>
+            <td>{{ item.fullName }}</td>
+            <td>{{ item.status }}</td>
+            <td class="see">
+              <button class="btn btn-primary" (click)="onDetail(item)">
+                <fa-icon [icon]="faSearch"></fa-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

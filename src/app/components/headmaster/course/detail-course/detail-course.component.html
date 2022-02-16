@@ -1,0 +1,43 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="tabs col-12 shadow">
+      <div class="standart">
+        <h1>Course Detail</h1>
+      </div>
+      <mat-spinner *ngIf="!spinner" class="spinner"></mat-spinner>
+      <div class="headers" *ngIf="spinner">
+        <div class="row">
+          <div class="title col-4">
+            <p><strong>ID</strong></p>
+          </div>
+          <div class="is col-2"><p>:</p></div>
+          <div class="desc col-4">
+            <p>{{ courses?._id }}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="title col-4">
+            <p><strong>Course Name</strong></p>
+          </div>
+          <div class="is col-2"><p>:</p></div>
+          <div class="desc col-4">
+            <p>{{ courses?.course }}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="title col-4">
+            <p><strong>Teacher</strong></p>
+          </div>
+          <div class="is col-2"><p>:</p></div>
+          <div class="desc col-4">
+            <p>{{ courses?.teacher?.fullName }}</p>
+          </div>
+        </div>
+        <br />
+        <div class="container action mt-2 mb-2">
+          <button class="btn btn-primary" (click)="onBack()">Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,91 @@
+<div class="content-wrapper">
+  <div class="container col-sm-11 set">
+    <div class="container-fluid title-form">
+      <h2>Update Data Student</h2>
+    </div>
+
+    <div class="container body-form">
+      <mat-spinner *ngIf="!spinner" class="spinner"></mat-spinner>
+      <form [formGroup]="editStudentForm" class="row g-3" *ngIf="spinner">
+        <div class="mb-3 row">
+          <label for="fullname" class="col-sm-2 col-form-label">Fullname</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="fullname"
+              formControlName="fullName"
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="email" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input
+              type="email"
+              readonly
+              class="form-control"
+              id="email"
+              formControlName="email"
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="birthDate" class="col-sm-2 col-form-label"
+            >Birthday</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="birthDate"
+              formControlName="birthDate"
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="classBefore" class="col-sm-2 col-form-label"
+            >Previous Class</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              readonly
+              id="classBefore"
+              formControlName="classBefore"
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="classAfter" class="col-sm-2 col-form-label"
+            >Select New Class :</label
+          >
+          <div class="col-sm-3">
+            <select class="form-select" id="classAfter" formControlName="classAfter">
+              <option *ngFor="let item of classes" value="{{ item.className }}">
+                {{ item.className }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="container action">
+          <button
+            type="button"
+            (click)="onSave()"
+            class="btn btn-success action-1"
+          >
+            Save
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary action-1"
+            (click)="onBack()"
+          >
+            Back
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

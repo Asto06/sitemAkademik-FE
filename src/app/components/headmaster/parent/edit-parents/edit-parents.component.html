@@ -1,0 +1,96 @@
+<div class="content-wrapper">
+  <div class="container col-sm-11 set">
+    <div class="container-fluid title-form">
+      <h2>Update Data Parent</h2>
+    </div>
+
+    <div class="container body-form">
+      <mat-spinner *ngIf="!spinner" class="spinner"></mat-spinner>
+      <form [formGroup]="editParentForm" class="row g-3" *ngIf="spinner">
+        <div class="mb-3 row">
+          <label for="father" class="col-sm-2 col-form-label">Father</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="father"
+              formControlName="father"
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="mother" class="col-sm-2 col-form-label">Mother</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="mother"
+              formControlName="mother"
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="birthDate" class="col-sm-2 col-form-label"
+            >Birthday</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="birthDate"
+              formControlName="birthDate"
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="student" class="col-sm-2 col-form-label">Student</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="student"
+              formControlName="student"
+            />
+          </div>
+        </div>
+        <div class="col-sm-3 mb-3 row" formArrayName="student">
+          <button class="btn btn-primary" (click)="onAddStudent()">
+            Add Student to Parent
+          </button>
+          <div
+            class="col-sm-3 mb-3 row"
+            *ngFor="let student of student.controls; let i = index"
+          >
+            <label for="student-{{ i }}" class="col-sm-2 col-form-label"
+              >Student</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                id="student-{{ i }}"
+                [formControlName]="i"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="container action">
+          <button
+            type="button"
+            (click)="onSave()"
+            class="btn btn-success action-1"
+          >
+            Save
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary action-1"
+            (click)="onBack()"
+          >
+            Back
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

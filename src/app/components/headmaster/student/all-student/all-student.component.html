@@ -1,0 +1,57 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="tabs col-12">
+      <div class="data">
+        <h3>student data</h3>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">No</th>
+            <th scope="col">NIS</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Status</th>
+            <th scope="col">Class</th>
+            <th scope="col" style>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="teacher-data" *ngFor="let item of students; let i = index">
+            <th scope="row" class="id">{{ i + 1 }}</th>
+            <td class="name">{{ item.nis }}</td>
+            <td class="gender">{{ item.fullName }}</td>
+            <td class="teach">{{ item.email }}</td>
+            <td class="teach">{{ item.status }}</td>
+            <td class="teach">{{ item.classes?.className }}</td>
+            <td class="see">
+              <button class="btn btn-primary" (click)="onDetail(item)">
+                <fa-icon [icon]="faSearch"></fa-icon>
+              </button>
+              <button
+                class="btn btn-warning"
+                style="color: #ffff"
+                (click)="onEdit(item)"
+              >
+                <fa-icon [icon]="faEdit"></fa-icon>Edit
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <button
+                routerLink="/headmaster/student/create"
+                routerLinkActive="active"
+                class="btn btn-primary"
+              >
+                Add New Student
+              </button>
+            </td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="container col-sm-9 set">
+  <div class="container title-form">
+    <h2>Update Data Class</h2>
+  </div>
+
+  <div class="container body-form">
+    <mat-spinner *ngIf="!spinner" class="spinner"></mat-spinner>
+    <form [formGroup]="editClassForm" class="row g-3 mt-2" *ngIf="spinner">
+      <div class="mb-3 row">
+        <label for="classes" class="col-sm-3 col-form-label"
+          >Select Class</label
+        >
+        <div class="col-sm-5">
+          <select class="form-select" id="classes" formControlName="className">
+            <option *ngFor="let item of classes" value="{{ item.className }}">{{ item.className }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="semester" class="col-sm-3 col-form-label">Semester</label>
+        <div class="col-sm-9">
+          <input
+            type="text"
+            class="form-control"
+            id="semester"
+            formControlName="semester"
+          />
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="yearAcademic" class="col-sm-3 col-form-label">Year Academic</label>
+        <div class="col-sm-9">
+          <input
+            type="text"
+            class="form-control"
+            id="yearAcademic"
+            formControlName="yearAcademic"
+          />
+        </div>
+      </div>
+      <div class="container action">
+        <button
+          type="button"
+          class="btn btn-success action-1"
+          (click)="onSave()"
+        >
+          Save
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary action-1"
+          (click)="onBack()"
+        >
+          Back
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

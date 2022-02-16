@@ -1,0 +1,29 @@
+<div class="content-wrapper">
+  <div class="container set">
+    <div class="container title-form">
+      <h2>Update Data Course</h2>
+    </div>
+  
+    <div class="container body-form">
+      <mat-spinner *ngIf="!spinner" class="spinner"></mat-spinner>
+      <form [formGroup]="editFormCourse" class="row g-3 mt-2" *ngIf="spinner">
+        <div class="mb-3 row">
+          <label for="course" class="col-sm-3 col-form-label">Course</label>
+          <div class="col-sm-9">
+            <input
+              type="text"
+              class="form-control"
+              id="course"
+              formControlName="course"
+            />
+          </div>
+        </div>
+        <div class="col-auto">
+          <button type="button" class="btn btn-primary ms-2 mb-2" (click)="onBack()">Back</button>
+          <button type="button" class="btn btn-success ms-2 mb-2" (click)="onSave()">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+</div>

@@ -1,0 +1,72 @@
+<div class="content-wrapper">
+  <div class="container col-sm-11 set">
+    <div class="container-fluid title-form">
+      <h2>Change Edit Homeroom Teacher</h2>
+    </div>
+
+    <div class="container body-form">
+      <mat-spinner *ngIf="!spinner" class="spinner"></mat-spinner>
+      <form [formGroup]="editHomeroomForm" class="row g-3 mt-2" *ngIf="spinner">
+        <div class="mb-3 row">
+          <label for="teacher" class="col-sm-4 col-form-label">Teacher</label>
+          <div class="col-sm-8">
+            <input
+              type="text"
+              readonly
+              class="form-control"
+              id="teacher"
+              formControlName="homeroomName"
+            />
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="classBefore" class="col-sm-4 col-form-label"
+            >Previous Class Homeroom Teacher</label
+          >
+          <div class="col-sm-8">
+            <input
+              type="text"
+              readonly
+              class="form-control"
+              id="classBefore"
+              formControlName="classBefore"
+            />
+          </div>
+        </div>
+
+        <div class="mb-1 row">
+          <label for="classAfter" class="col-sm-4 col-form-label"
+            >Select The New Class Homeroom Teacher</label
+          >
+          <div class="col-sm-8">
+            <select
+              class="form-select"
+              id="classAfter"
+              formControlName="classAfter"
+            >
+              <option *ngFor="let item of classes" value="{{ item.className }}">
+                {{ item.className }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="container action">
+          <button
+            type="button"
+            (click)="onSave()"
+            class="btn btn-success action-1"
+          >
+            Save
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary action-1"
+            (click)="onBack()"
+          >
+            Back
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<app-header></app-header>
+<app-sidebar-student></app-sidebar-student>
+<div class="content-wrapper">
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Dashboard</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="container">
+          <div class="card" style="max-width: 100%">
+            <div class="header" style="background-color: rgb(216, 0, 0)">
+              <h2 class="text-center">Profil Student</h2>
+            </div>
+            <div class="card-body">
+              <table class="table table-borderless">
+                <tbody>
+                  <tr>
+                    <th scope="row"></th>
+                    <td class="fw-bold">ID</td>
+                    <td>:</td>
+                    <td>{{ students?._id }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td class="fw-bold">Email</td>
+                    <td>:</td>
+                    <td>{{ students?.email }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td class="fw-bold">FullName</td>
+                    <td>:</td>
+                    <td>{{ students?.fullName }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td class="fw-bold">Status</td>
+                    <td>:</td>
+                    <td>{{ students?.status }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td class="fw-bold">Class</td>
+                    <td>:</td>
+                    <td>{{ students?.classes?.className }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td class="fw-bold">Year Academic</td>
+                    <td>:</td>
+                    <td>{{ students?.yearAcademic }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,16 @@
+.table-range {
+  font-size: 18px;
+  color: white;
+}
+.content-wrapper {
+  height: 2000px;
+}
+
+.edit {
+  text-align: right;
+}
+
+th{
+  width: 500px;
+  
+}

@@ -1,0 +1,43 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="tabs col-12">
+      <div class="data">
+        <h1>Add Score Data of Course To New Student</h1>
+      </div>
+      <form [formGroup]="addScoreForm" class="mt-4">
+        <div class="mb-3 row">
+          <h3 style="text-align: center">
+           <b>ATTENTION</b>
+          </h3>
+          <p style="text-align: center"><b>This Very Important and Very Needed</b> For New Student <br />
+            This form input for student and he's dont have <b>FIELD SCORE DATA</b> of
+            all course</p>
+        </div>
+        <div class="mb-3 row">
+          <label for="student" class="col-sm-3 col-form-label"
+            >Select Student
+          </label>
+          <div class="col-sm-6">
+            <select class="form-select" id="student" formControlName="student">
+              <option *ngFor="let item of students" value="{{ item.fullName }}">{{ item.fullName }}</option>
+            </select>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="course" class="col-sm-3 col-form-label"
+            >Select Course
+          </label>
+          <div class="col-sm-6">
+            <select class="form-select" id="course" formControlName="course">
+              <option *ngFor="let item of courses" value="{{ item.course }}">{{ item.course }}</option>
+            </select>
+          </div>
+        </div>
+        <div class="container action mb-3">
+          <button class="btn btn-primary action-1" (click)="onBack()">Back</button>
+          <button class="btn btn-primary action-1" (click)="onSubmit()">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

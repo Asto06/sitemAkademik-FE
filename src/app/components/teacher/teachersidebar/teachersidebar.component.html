@@ -1,0 +1,94 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4 fixed-sidebar">
+  <div class="sidebar">
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        <img
+          src="assets/dist/img/profil.jpg"
+          class="img-circle elevation-2"
+          alt="User Image"
+        />
+      </div>
+      <div class="info">
+        <h6 class="d-block">Eva Siti Nurjanah</h6>
+        <p style="color: #fff">Teacher test</p>
+      </div>
+    </div>
+
+    <nav class="mt-2">
+      <ul
+        class="nav nav-pills nav-sidebar flex-column"
+        data-widget="treeview"
+        role="menu"
+        data-accordion="false"
+      >
+        <li class="nav-header">DASHBOARD</li>
+        <li class="nav-item">
+          <a
+            routerLink="/teacher/dashboard"
+            routerLinkActive="active"
+            class="nav-link"
+          >
+            <i class="nav-icon fas fa-home"></i>
+            <p>Home</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            routerLink="/teacher/class"
+            routerLinkActive="active"
+            class="nav-link"
+          >
+            <i class="fas fa-house-user nav-icon"></i>
+            <p>Class Your Teaching</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            routerLink="/teacher/homeClass"
+            routerLinkActive="active"
+            class="nav-link"
+          >
+            <i class="fas fa-school nav-icon"></i>
+            <p>Class Your Homeroom</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            routerLink="/teacher/newScore/allScore-student"
+            routerLinkActive="active"
+            class="nav-link"
+          >
+            <i class="fas fa-poll nav-icon"></i>
+            <p>Manage Score Student</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            routerLink="/teacher/gradeStudent"
+            routerLinkActive="active"
+            class="nav-link"
+          >
+            <i class="fas fa-list-ol nav-icon"></i>
+            <p>Grading Student</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            routerLink="/teacher/schedule"
+            routerLinkActive="active"
+            class="nav-link"
+          >
+            <i class="fas fa-calendar-alt nav-icon"></i>
+            <p>Schedule For Teaching</p>
+          </a>
+        </li>
+        <li class="nav-header">
+          <a class="nav-link" (click)="logout()">
+            <i class="nav-icon fas fa-sign-out-alt"></i>
+            <p>Logout</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>

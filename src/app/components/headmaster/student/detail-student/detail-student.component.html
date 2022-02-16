@@ -1,0 +1,72 @@
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="tabs col-12 shadow">
+      <div class="standart">
+        <h1>Detail Student</h1>
+      </div>
+      <mat-spinner *ngIf="!spinner" class="spinner"></mat-spinner>
+      <div class="headers" *ngIf="spinner">
+        <div class="row">
+          <div class="title col-4">
+            <p><strong>NIS</strong></p>
+          </div>
+          <div class="is col-1"><p>:</p></div>
+          <div class="desc col-4"><p>{{students?.nis}}</p></div>
+        </div>
+        <div class="row">
+          <div class="title col-4">
+            <p><strong>Name</strong></p>
+          </div>
+          <div class="is col-1"><p>:</p></div>
+          <div class="desc col-4"><p>{{students?.fullName}}</p></div>
+        </div>
+        <div class="row">
+          <div class="title col-4">
+            <p><strong>Email</strong></p>
+          </div>
+          <div class="is col-1"><p>:</p></div>
+          <div class="desc col-4"><p>{{students?.email}}</p></div>
+        </div>
+        <div class="row">
+          <div class="title col-4">
+            <p><strong>Parent</strong></p>
+          </div>
+          <div class="is col-1"><p>:</p></div>
+          <div class="desc col-4"><p>{{students?.parent}}</p></div>
+        </div>
+        <div class="row">
+          <div class="title col-4">
+            <p><strong>Status</strong></p>
+          </div>
+          <div class="is col-1"><p>:</p></div>
+          <div class="desc col-4">
+            <p>{{students?.status}}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="title col-4">
+            <p><strong>Class</strong></p>
+          </div>
+          <div class="is col-1"><p>:</p></div>
+          <div class="desc col-4"><p>{{students?.classes?.className}}</p></div>
+        </div>
+        <div class="row">
+          <div class="title col-4">
+            <p><strong>Birthday</strong></p>
+          </div>
+          <div class="is col-1"><p>:</p></div>
+          <div class="desc col-4"><p>{{students?.birthDate}}</p></div>
+        </div>
+        <div class="container action">
+          <button
+            type="button"
+            class="btn btn-primary action-1"
+            (click)="onBack()"
+          >
+            Back
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
